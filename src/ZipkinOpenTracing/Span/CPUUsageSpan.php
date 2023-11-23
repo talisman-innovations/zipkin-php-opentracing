@@ -41,28 +41,28 @@ class CPUUsageSpan implements Span
 
     public function isNoop(): bool
     {
-        return $this->isNoop();
+        return $this->span->isNoop();
     }
 
     public function getContext(): TraceContext
     {
-        return $this->getContext();
+        return $this->span->getContext();
     }
 
     public function start(int $timestamp = null): void
     {
-        $this->start($timestamp);
+        $this->span->start($timestamp);
         $this->usageStatsStart = getrusage();
     }
 
     public function setName(string $name): void
     {
-        $this->setName($name);
+        $this->span->setName($name);
     }
 
     public function setKind(string $kind): void
     {
-        $this->setKind($kind);
+        $this->span->setKind($kind);
     }
 
     public function tag(string $key, string $value): void
@@ -87,11 +87,11 @@ class CPUUsageSpan implements Span
 
     public function abandon(): void
     {
-        $this->abandon();
+        $this->span->abandon();
     }
 
     public function flush(): void
     {
-        $this->flush();
+        $this->span->flush();
     }
 }
