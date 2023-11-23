@@ -135,7 +135,7 @@ final class Tracer implements OTTracer
             return ZipkinOpenTracingNoopSpan::create($span);
         }
 
-        // Decorate span TODO make optional?
+        // Decorate span
         $span = new ZipkinOpenTracingSpan\CPUUsageSpan($span);
 
         $span->start($options->getStartTime() ?: Timestamp\now());
