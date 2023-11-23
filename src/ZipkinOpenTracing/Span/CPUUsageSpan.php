@@ -12,8 +12,6 @@ class CPUUsageSpan implements Span
     private Span $span;
     private array $usageStatsStart = [];
 
-    private const START_USAGE = 'start.usage';
-
     public function __construct(Span $span)
     {
         $this->span = $span;
